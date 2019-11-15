@@ -1,5 +1,7 @@
 # README
 
+https://docs.docker.com/compose/rails/
+
 ```
 touch Gemfile.lock
 docker-compose run web rails new . --force --no-deps --database=postgresql
