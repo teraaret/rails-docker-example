@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+      <div class="nav">
+            <%= link_to 'index', root_path %>
+            <%= link_to 'pages', pages_path %>
+            <%= link_to 'new page', new_page_path %>
+        </div>
+
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <% if notice %>
+                        <hr>
+                        <div class="alert alert-success" role="alert">
+                            <%= notice %>
+                        </div>
+                        <% end %>
+                        <%= yield %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  </body>
+</html>

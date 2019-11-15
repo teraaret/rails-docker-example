@@ -44,3 +44,7 @@ Finally, you need to create the database. In another terminal, run:
 # Restart the application
 
 `docker-compose up`
+
+# Dev
+
+`alias rails='docker exec rails_web_1 rails'`

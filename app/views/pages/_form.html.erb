@@ -1,0 +1,38 @@
+<% if @page.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+        <h5><%= t('common.errors') %></h5>
+        <ul>
+            <% @page.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<div class="card">
+    <div class="card-title">
+        <h1><%= header %></h1>
+    </div>
+    <div class="card-text">
+        <%= form_for @page do |f| %>
+
+            <div class="form-group">
+                <%= f.label :title %>
+                <%= f.text_field :title, class: 'form-control' %>
+            </div>
+
+            <div>
+                <%= f.label :description %>
+                <%= f.text_area :description, class: 'form-control' %>
+            </div>
+
+            <hr>
+
+            <div>
+                <%= link_to 'Back', :back %>
+                <%= f.submit 'Save', class: 'btn btn-primary' %>
+            </div>
+
+        <% end %>
+    </div>
+</div>
